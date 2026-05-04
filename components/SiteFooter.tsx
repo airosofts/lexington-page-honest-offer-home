@@ -1,0 +1,94 @@
+import Link from "next/link";
+
+export default function SiteFooter() {
+  const year = new Date().getFullYear();
+  return (
+    <footer>
+      <div className="container-site">
+        <div className="foot-grid">
+          <div className="foot foot-brand">
+            <Link
+              href="/"
+              className="brand"
+              aria-label="Honest Offer — Sell Your House Fast"
+            >
+              <span className="brand-mark" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path className="mark-house" d="M3 11L12 4l9 7v9H3V11z" />
+                  <path className="mark-check" d="M8 14.5l2.5 2.5L16 11.5" />
+                </svg>
+              </span>
+              <span className="brand-text">
+                <span className="brand-name">
+                  Honest Offer <span className="brand-suffix">Inc.</span>
+                </span>
+                <span className="brand-tagline">Sell Your House Fast</span>
+              </span>
+            </Link>
+            <p>
+              Straight-talk cash offers on houses in your area. Locally owned,
+              family-operated, licensed and insured.
+            </p>
+            <a
+              href="tel:+18887808805"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                color: "var(--barn)",
+                fontWeight: 700,
+                fontSize: "0.95rem",
+                textDecoration: "none",
+                marginTop: "0.5rem",
+              }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 5.91 5.91l1.51-1.51a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              (888) 780-8805
+            </a>
+          </div>
+          <div className="foot">
+            <h5>Service</h5>
+            <ul>
+              <li>Fair cash offers</li>
+              <li>Sell as-is, any condition</li>
+              <li>You pick the closing date</li>
+            </ul>
+          </div>
+          <div className="foot">
+            <h5>About</h5>
+            <ul>
+              <li>Locally owned</li>
+              <li>Licensed &amp; insured</li>
+              <li>BBB Accredited A+</li>
+            </ul>
+          </div>
+        </div>
+        <div className="foot-legal">
+          <div>© {year} Honest Offer Inc. Licensed &amp; insured.</div>
+          <div>
+            <Link href="/privacy">Privacy</Link> ·{" "}
+            <Link href="/terms">Terms</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
