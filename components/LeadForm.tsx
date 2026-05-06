@@ -42,9 +42,9 @@ const TIMELINE_CHOICES = [
 ];
 
 function fireEvent(name: string, params?: Record<string, string | number>) {
-  if (typeof window !== "undefined" && typeof (window as Window & { gtag?: Function }).gtag === "function") {
-    (window as Window & { gtag: Function }).gtag("event", name, { event_category: "form", ...params });
-  }
+  if (typeof window === "undefined") return;
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof gtag === "function") gtag("event", name, { event_category: "form", ...params });
 }
 
 function maskPhone(raw: string): string {
@@ -236,21 +236,6 @@ export default function LeadForm() {
                 errors.phone ? { borderColor: "var(--barn)" } : undefined
               }
             />
-            <div className="field-hint">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-              We&rsquo;ll only text your offer — no spam calls, no sharing your
-              info.
-            </div>
           </div>
           <button
             type="button"
@@ -273,26 +258,6 @@ export default function LeadForm() {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </button>
-          <div className="microcopy">
-            <span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-              Private
-            </span>
-            <span>·</span>
-            <span>No credit check</span>
-            <span>·</span>
-            <span>60 seconds</span>
-          </div>
         </div>
 
         {/* Step 2 */}
