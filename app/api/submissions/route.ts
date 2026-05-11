@@ -239,14 +239,8 @@ export async function POST(request: NextRequest) {
       if (body.email) cols["email_mm2qysja"] = { email: body.email, text: body.email };
       const propLabel = PROPERTY_TYPE_LABELS[body.propertyType ?? ""];
       if (propLabel) cols["color_mm1jcpen"] = { label: propLabel };
-      await Promise.all([
-        mondayUpdate({ boardId, itemId: body.mondayItemId, columns: cols })
-          .catch((err) => console.error("monday step3 update threw", err)),
-        fullName
-          ? mondayRename({ boardId, itemId: body.mondayItemId, name: fullName })
-              .catch((err) => console.error("monday rename threw", err))
-          : Promise.resolve(),
-      ]);
+      await mondayUpdate({ boardId, itemId: body.mondayItemId, columns: cols })
+        .catch((err) => console.error("monday step3 update threw", err));
     }
   }
   // ──────────────────────────────────────────────────────────────────────────
