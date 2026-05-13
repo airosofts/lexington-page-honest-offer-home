@@ -24,8 +24,10 @@ const localBusinessSchema = {
   telephone: "+18887808805",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "257 Elmwood Dr",
     addressLocality: "Lexington",
     addressRegion: "KY",
+    postalCode: "40505",
     addressCountry: "US",
   },
   geo: {
@@ -47,10 +49,10 @@ const localBusinessSchema = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
+    ratingValue: "5.0",
     bestRating: "5",
     worstRating: "1",
-    ratingCount: "87",
+    ratingCount: "4",
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -60,7 +62,7 @@ const localBusinessSchema = {
   },
   description:
     "Locally owned cash home buyer serving Lexington, Louisville, Bowling Green, and all of Kentucky. Fair cash offers in 24 hours. No repairs, no agents, no fees. A+ BBB rated.",
-  sameAs: ["https://honestofferhome.com"],
+  sameAs: ["https://honestofferhome.com", "https://www.google.com/maps/place/?cid=2962018254832420882"],
 };
 
 const faqSchema = {

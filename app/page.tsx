@@ -2,6 +2,7 @@ import LeadForm from "@/components/LeadForm";
 import VisitorTracker from "@/components/VisitorTracker";
 import FaqLexington from "@/components/FaqLexington";
 import Link from "next/link";
+import Image from "next/image";
 
 const PHONE_DISPLAY = "(888) 780-8805";
 const PHONE_TEL = "tel:+18887808805";
@@ -96,7 +97,7 @@ export default function LexingtonPage() {
                   ★★★★★
                 </span>
                 <span>
-                  <strong>4.9 / 5</strong> on Google
+                  <strong>5.0 / 5</strong> on Google
                 </span>
               </div>
               <div className="trust-item">
@@ -357,6 +358,93 @@ export default function LexingtonPage() {
         </div>
       </section>
 
+      {/* ── Recent Lexington Purchases ── */}
+      <section style={{ background: "var(--cream-deep)" }}>
+        <div className="container-site">
+          <div className="section-head centered">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              Houses We Buy
+            </div>
+            <h2>The Lexington homes most agents won&rsquo;t touch.</h2>
+            <p style={{ maxWidth: "58ch", margin: "0 auto" }}>
+              Outdated kitchens, deferred maintenance, tired ranches in established neighborhoods — we
+              buy these every week. No staging. No inspection demands. Just an honest cash offer.
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "1.5rem",
+              marginTop: "2.5rem",
+              maxWidth: 920,
+              margin: "2.5rem auto 0",
+            }}
+          >
+            <figure style={{ margin: 0 }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: "4 / 3",
+                  borderRadius: "var(--radius)",
+                  overflow: "hidden",
+                  border: "1px solid var(--line)",
+                  background: "var(--paper)",
+                }}
+              >
+                <Image
+                  src="/images/homeowner-ranch.png"
+                  alt="A Lexington homeowner standing outside the ranch home he just sold to Honest Offer"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <figcaption
+                style={{
+                  fontSize: "0.9rem",
+                  color: "var(--muted)",
+                  marginTop: "0.7rem",
+                  textAlign: "center",
+                }}
+              >
+                Closed in 9 days · Seller kept the move-out date he wanted
+              </figcaption>
+            </figure>
+            <figure style={{ margin: 0 }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: "4 / 3",
+                  borderRadius: "var(--radius)",
+                  overflow: "hidden",
+                  border: "1px solid var(--line)",
+                  background: "var(--paper)",
+                }}
+              >
+                <Image
+                  src="/images/ranch-house-2.png"
+                  alt="A mid-century Lexington ranch home on a quiet street at golden hour"
+                  fill
+                  sizes="(max-width: 720px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <figcaption
+                style={{
+                  fontSize: "0.9rem",
+                  color: "var(--muted)",
+                  marginTop: "0.7rem",
+                  textAlign: "center",
+                }}
+              >
+                Inherited property · Probate handled on our side
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* ── About ── */}
       <section className="about">
         <div className="container-site about-grid">
@@ -385,21 +473,73 @@ export default function LexingtonPage() {
               </div>
             </div>
           </div>
-          <div className="local-card">
-            <h3 style={{ marginBottom: 18 }}>Honest Offer by the numbers.</h3>
-            <div className="local-stat"><span className="l">Years in business</span><span className="v"><em>7+</em></span></div>
-            <div className="local-stat"><span className="l">Homes purchased</span><span className="v">200<em>+</em></span></div>
-            <div className="local-stat"><span className="l">Markets served</span><span className="v">Central KY</span></div>
-            <div className="local-stat"><span className="l">Avg. days to close</span><span className="v">14</span></div>
-            <div className="local-stat"><span className="l">Google rating</span><span className="v">4.9<em>★</em></span></div>
-            <div className="local-stat"><span className="l">BBB rating</span><span className="v">A+</span></div>
-          </div>
+          <figure style={{ margin: 0 }}>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "4 / 3",
+                borderRadius: "var(--radius)",
+                overflow: "hidden",
+                border: "1px solid var(--line)",
+                background: "var(--paper)",
+              }}
+            >
+              <Image
+                src="/images/team-office.png"
+                alt="The Honest Offer team standing outside their Lexington, Kentucky office"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--muted)",
+                marginTop: "0.7rem",
+                textAlign: "center",
+              }}
+            >
+              The Honest Offer team at our Lexington office · Locally owned &amp; operated
+            </figcaption>
+          </figure>
         </div>
       </section>
 
       {/* ── Service Area ── */}
       <section style={{ background: "var(--cream-deep)" }}>
         <div className="container-site">
+          <figure style={{ margin: "0 auto 2.5rem", maxWidth: 720 }}>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "4 / 3",
+                borderRadius: "var(--radius)",
+                overflow: "hidden",
+                border: "1px solid var(--line)",
+                background: "var(--paper)",
+              }}
+            >
+              <Image
+                src="/images/team-lexington-sign.png"
+                alt="The Honest Offer team gathered at the Welcome to Lexington sign in downtown Lexington, Kentucky"
+                fill
+                sizes="(max-width: 720px) 100vw, 720px"
+                style={{ objectFit: "cover" }}
+                priority={false}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--muted)",
+                marginTop: "0.7rem",
+                textAlign: "center",
+              }}
+            >
+              We&rsquo;re your neighbors — born, based, and buying in Central Kentucky.
+            </figcaption>
+          </figure>
           <div className="section-head centered">
             <div className="eyebrow" style={{ justifyContent: "center" }}>Where We Buy</div>
             <h2>We buy houses across Lexington, KY and Central Kentucky.</h2>
@@ -431,43 +571,53 @@ export default function LexingtonPage() {
       <section>
         <div className="container-site">
           <div className="section-head centered">
-            <div className="eyebrow" style={{ justifyContent: "center" }}>From Real Lexington Sellers</div>
-            <h2>What Kentucky homeowners say about us.</h2>
+            <div className="eyebrow" style={{ justifyContent: "center" }}>Verified Google Reviews</div>
+            <h2>What homeowners say about selling to us.</h2>
+            <p style={{ maxWidth: "52ch", margin: "0 auto" }}>
+              5.0 ★★★★★ on Google · Every review below is from a real seller. <a
+                href="https://www.google.com/maps/place/?cid=2962018254832420882"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--barn)", textDecoration: "underline" }}
+              >
+                View on Google
+              </a>
+            </p>
           </div>
           <div className="testis">
             <div className="testi">
               <span className="quote-mark" aria-hidden="true">&ldquo;</span>
               <div className="stars">★★★★★</div>
-              <p className="testi-text">After my mother passed, the Lexington house was too much to deal with from out of state. They handled everything, from probate paperwork to clearing out the furniture. Fair offer, no games.</p>
+              <p className="testi-text">Honest Offer Home was a great company to work with during a very difficult time in my life. From the beginning, their team was professional, respectful, and easy to communicate with. The offer was fair, the process was straightforward, and they did exactly what they said they would do.</p>
               <div className="testi-foot">
-                <div className="avatar">JM</div>
+                <div className="avatar">ML</div>
                 <div>
-                  <div className="testi-name">Janet M.</div>
-                  <div className="testi-meta">Verified seller · Lexington, KY · Inherited property</div>
+                  <div className="testi-name">Maria Lujan Medina</div>
+                  <div className="testi-meta">★★★★★ · Verified Google review</div>
                 </div>
               </div>
             </div>
             <div className="testi">
               <span className="quote-mark" aria-hidden="true">&ldquo;</span>
               <div className="stars">★★★★★</div>
-              <p className="testi-text">I talked to two other Lexington cash buyers first. Their offers were lowball and they pressured me. Honest Offer&rsquo;s number was higher and they let me take a week to think. That&rsquo;s the difference.</p>
+              <p className="testi-text">I inherited a property that had become overwhelming to deal with. The team made the entire process feel straightforward and low stress from the first conversation. What stood out most was that there was no pressure and no unrealistic promises. They gave me a fair offer quickly and worked around my timeline.</p>
               <div className="testi-foot">
-                <div className="avatar a2">MT</div>
+                <div className="avatar a2">SR</div>
                 <div>
-                  <div className="testi-name">Marcus T.</div>
-                  <div className="testi-meta">Verified seller · Lexington, KY · Rental property</div>
+                  <div className="testi-name">Sunrise Recycling</div>
+                  <div className="testi-meta">★★★★★ · Verified Google review</div>
                 </div>
               </div>
             </div>
             <div className="testi">
               <span className="quote-mark" aria-hidden="true">&ldquo;</span>
               <div className="stars">★★★★★</div>
-              <p className="testi-text">They said 14 days to close. It was 14 days, to the hour. We signed, they wired, we handed them the keys, and that was that. No surprises. Exactly what they promised.</p>
+              <p className="testi-text">I needed to sell quickly and didn&rsquo;t want to deal with repairs, listings, or months of waiting. They made me a cash offer, bought the house completely as-is, and the whole process was smooth from start to finish. Communication was clear, they were professional, and there were no surprises at closing.</p>
               <div className="testi-foot">
-                <div className="avatar a3">RK</div>
+                <div className="avatar a3">YG</div>
                 <div>
-                  <div className="testi-name">Robert &amp; Linda K.</div>
-                  <div className="testi-meta">Verified seller · Nicholasville, KY · Relocation</div>
+                  <div className="testi-name">Ysis Gonzalez</div>
+                  <div className="testi-meta">★★★★★ · Verified Google review</div>
                 </div>
               </div>
             </div>

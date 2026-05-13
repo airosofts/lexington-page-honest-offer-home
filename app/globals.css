@@ -1180,9 +1180,15 @@ footer {
 }
 .foot-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.8fr 0.9fr 0.9fr 1.4fr;
   gap: 40px;
   margin-bottom: 36px;
+}
+@media (max-width: 980px) {
+  .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
 }
 @media (max-width: 700px) {
   .foot-grid {

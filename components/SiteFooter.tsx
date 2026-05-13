@@ -80,6 +80,33 @@ export default function SiteFooter() {
               <li>BBB Accredited A+</li>
             </ul>
           </div>
+          <div className="foot foot-visit">
+            <h5>Visit Us</h5>
+            <address style={{ fontStyle: "normal", fontSize: "0.9rem", lineHeight: 1.6, color: "var(--ink-soft)" }}>
+              257 Elmwood Dr<br />
+              Lexington, KY 40505
+            </address>
+            <div style={{ marginTop: 10, borderRadius: "var(--radius)", overflow: "hidden", border: "1px solid var(--line)" }}>
+              <iframe
+                title="Honest Offer office location on Google Maps"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRMxUxsq4taEGbcelOv-IvlJk6R36IbLA&q=place_id:ChIJrY2gIe5FQogREkiCyegzGyk&zoom=15"
+                width="100%"
+                height="160"
+                style={{ border: 0, display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.google.com/maps/place/?cid=2962018254832420882"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-block", marginTop: 8, fontSize: "0.85rem", color: "var(--barn)", fontWeight: 600 }}
+            >
+              Open in Google Maps →
+            </a>
+          </div>
         </div>
         <div className="foot-legal">
           <div>© {year} Honest Offer Inc. Licensed &amp; insured.</div>
