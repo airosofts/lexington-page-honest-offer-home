@@ -1196,6 +1196,64 @@ footer {
     gap: 28px;
   }
 }
+
+/* "Visit Us" block — full-width row above the legal line. */
+.foot-visit-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 2fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 22px 0;
+  border-top: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  margin-bottom: 18px;
+}
+.foot-visit-row h5 {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.foot-visit-row .visit-meta address {
+  font-style: normal;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.foot-visit-row .visit-meta a {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--barn);
+  text-decoration: none;
+}
+.foot-visit-row .visit-meta a:hover {
+  color: var(--barn-deep);
+  text-decoration: underline;
+}
+.foot-visit-row .visit-map {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  min-height: 160px;
+}
+.foot-visit-row .visit-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  border: 0;
+  display: block;
+}
+@media (max-width: 700px) {
+  .foot-visit-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 .foot-brand p {
   color: var(--ink-soft);
   font-size: 0.92rem;

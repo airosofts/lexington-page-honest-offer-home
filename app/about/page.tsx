@@ -142,7 +142,32 @@ export default function AboutPage() {
 
       <footer>
         <div className="container-site">
-          <div className="foot-legal" style={{ paddingTop: "2rem" }}>
+          <div className="foot-visit-row">
+            <div className="visit-meta">
+              <h5>Visit Us</h5>
+              <address>
+                257 Elmwood Dr<br />
+                Lexington, KY 40505
+              </address>
+              <a
+                href="https://www.google.com/maps/place/?cid=2962018254832420882"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Google Maps →
+              </a>
+            </div>
+            <div className="visit-map">
+              <iframe
+                title="Honest Offer office location on Google Maps"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBRMxUxsq4taEGbcelOv-IvlJk6R36IbLA&q=place_id:ChIJrY2gIe5FQogREkiCyegzGyk&zoom=15"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          <div className="foot-legal">
             <div>© {new Date().getFullYear()} Honest Offer Inc. · Kentucky · Licensed &amp; insured.</div>
             <div>
               <Link href="/">Home</Link> · <Link href="/how-it-works">How It Works</Link> · <Link href="/reviews">Reviews</Link> · <Link href="/privacy">Privacy</Link>
