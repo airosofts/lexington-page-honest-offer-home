@@ -120,7 +120,39 @@ export default function LexingtonPage() {
             </div>
           </div>
 
-          <LeadForm />
+          <div>
+            <LeadForm />
+            <figure style={{ margin: "1.25rem 0 0" }}>
+              <div
+                style={{
+                  position: "relative",
+                  aspectRatio: "4 / 3",
+                  borderRadius: "var(--radius)",
+                  overflow: "hidden",
+                  border: "1px solid var(--line)",
+                  background: "var(--paper)",
+                }}
+              >
+                <Image
+                  src="/images/team-lexington-sign.png"
+                  alt="The Honest Offer team gathered at the Welcome to Lexington sign in downtown Lexington, Kentucky"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 480px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <figcaption
+                style={{
+                  fontSize: "0.85rem",
+                  color: "var(--muted)",
+                  marginTop: "0.6rem",
+                  textAlign: "center",
+                }}
+              >
+                Your local Lexington team · Born, based, and buying in Central Kentucky.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -509,37 +541,6 @@ export default function LexingtonPage() {
       {/* ── Service Area ── */}
       <section style={{ background: "var(--cream-deep)" }}>
         <div className="container-site">
-          <figure style={{ margin: "0 auto 2.5rem", maxWidth: 720 }}>
-            <div
-              style={{
-                position: "relative",
-                aspectRatio: "4 / 3",
-                borderRadius: "var(--radius)",
-                overflow: "hidden",
-                border: "1px solid var(--line)",
-                background: "var(--paper)",
-              }}
-            >
-              <Image
-                src="/images/team-lexington-sign.png"
-                alt="The Honest Offer team gathered at the Welcome to Lexington sign in downtown Lexington, Kentucky"
-                fill
-                sizes="(max-width: 720px) 100vw, 720px"
-                style={{ objectFit: "cover" }}
-                priority={false}
-              />
-            </div>
-            <figcaption
-              style={{
-                fontSize: "0.85rem",
-                color: "var(--muted)",
-                marginTop: "0.7rem",
-                textAlign: "center",
-              }}
-            >
-              We&rsquo;re your neighbors — born, based, and buying in Central Kentucky.
-            </figcaption>
-          </figure>
           <div className="section-head centered">
             <div className="eyebrow" style={{ justifyContent: "center" }}>Where We Buy</div>
             <h2>We buy houses across Lexington, KY and Central Kentucky.</h2>
