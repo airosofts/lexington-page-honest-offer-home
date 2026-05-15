@@ -13,6 +13,7 @@ type FormState = {
   phone: string;
   condition: string;
   timeline: string;
+  sellerMotivation: string;
   name: string;
   email: string;
 };
@@ -23,6 +24,7 @@ const INITIAL: FormState = {
   phone: "",
   condition: "",
   timeline: "",
+  sellerMotivation: "",
   name: "",
   email: "",
 };
@@ -130,6 +132,7 @@ export default function LeadForm() {
       await saveStep(2, {
         condition: values.condition,
         timeline: values.timeline,
+        sellerMotivation: values.sellerMotivation,
       });
       setSubmitting(false);
       fireEvent("form_step_2_complete", { step: 2, condition: values.condition, timeline: values.timeline });
@@ -303,6 +306,21 @@ export default function LeadForm() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="field">
+            <label htmlFor="seller-motivation">
+              What&rsquo;s prompting you to sell? <span style={{ color: "var(--muted)", fontWeight: 400 }}>(optional)</span>
+            </label>
+            <textarea
+              className="input"
+              id="seller-motivation"
+              rows={3}
+              placeholder="e.g. inherited the property, relocating for work, tired of being a landlord…"
+              value={values.sellerMotivation}
+              onChange={(e) =>
+                setValues((v) => ({ ...v, sellerMotivation: e.target.value }))
+              }
+            />
           </div>
           <button
             type="button"

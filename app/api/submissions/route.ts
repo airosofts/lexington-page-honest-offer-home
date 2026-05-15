@@ -19,6 +19,7 @@ type SubmissionPayload = {
   // Step 2
   condition?: string;
   timeline?: string;
+  sellerMotivation?: string;
 
   // Step 3
   name?: string;
@@ -36,6 +37,7 @@ type Row = {
   phone?: string | null;
   condition?: string | null;
   timeline?: string | null;
+  seller_motivation?: string | null;
   name?: string | null;
   email?: string | null;
   ip_address: string | null;
@@ -193,6 +195,7 @@ export async function POST(request: NextRequest) {
   } else if (body.step === 2) {
     if (body.condition !== undefined) row.condition = body.condition;
     if (body.timeline !== undefined) row.timeline = body.timeline;
+    if (body.sellerMotivation !== undefined) row.seller_motivation = body.sellerMotivation;
   } else if (body.step === 3) {
     if (body.name !== undefined) row.name = body.name;
     if (body.email !== undefined) row.email = body.email;
@@ -227,6 +230,7 @@ export async function POST(request: NextRequest) {
       const cols: Record<string, unknown> = {};
       if (condLabel) cols["color_mm2q39x3"] = { label: condLabel };
       if (timeLabel) cols["color_mm2qyjt4"] = { label: timeLabel };
+      if (body.sellerMotivation?.trim()) cols["text_mm3c3dpn"] = body.sellerMotivation.trim();
       await mondayUpdate({ boardId, itemId: body.mondayItemId, columns: cols })
         .catch((err) => console.error("monday step2 update threw", err));
 
