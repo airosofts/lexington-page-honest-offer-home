@@ -103,6 +103,24 @@ export default function LeadForm() {
     }
   }
 
+  // Real phone validation — heuristics + carrier lookup via /api/validate-phone.
+  // Network failure reaching our own API never hard-blocks a lead.
+  async function validatePhone(
+    phone: string
+  ): Promise<{ valid: boolean; message?: string }> {
+    try {
+      const res = await fetch("/api/validate-phone", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone }),
+      });
+      const data = (await res.json()) as { valid?: boolean; message?: string };
+      return { valid: !!data.valid, message: data.message };
+    } catch {
+      return { valid: true };
+    }
+  }
+
   async function handleNext(from: Step) {
     if (from === 1) {
       const next: Record<string, string> = {};
@@ -115,6 +133,17 @@ export default function LeadForm() {
       }
       setErrors({});
       setSubmitting(true);
+
+      // Verify the phone is a real, working US number before advancing.
+      const phoneCheck = await validatePhone(values.phone);
+      if (!phoneCheck.valid) {
+        setErrors({
+          phone: phoneCheck.message || "Please enter a valid phone number.",
+        });
+        setSubmitting(false);
+        return;
+      }
+
       const result = await saveStep(1, {
         address: values.address,
         phone: values.phone,
@@ -232,13 +261,27 @@ export default function LeadForm() {
               autoComplete="tel"
               inputMode="tel"
               value={values.phone}
-              onChange={(e) =>
-                setValues((v) => ({ ...v, phone: maskPhone(e.target.value) }))
-              }
+              onChange={(e) => {
+                setValues((v) => ({ ...v, phone: maskPhone(e.target.value) }));
+                if (errors.phone)
+                  setErrors((er) => ({ ...er, phone: "" }));
+              }}
               style={
                 errors.phone ? { borderColor: "var(--barn)" } : undefined
               }
             />
+            {errors.phone && (
+              <div
+                style={{
+                  marginTop: 6,
+                  fontSize: "0.78rem",
+                  fontWeight: 500,
+                  color: "var(--barn)",
+                }}
+              >
+                {errors.phone}
+              </div>
+            )}
           </div>
           <button
             type="button"

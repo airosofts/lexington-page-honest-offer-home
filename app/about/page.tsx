@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import VisitorTracker from "@/components/VisitorTracker";
 import TopBar from "@/components/TopBar";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Honest Offer | Locally Owned Kentucky Cash Home Buyer",
@@ -30,6 +31,43 @@ export default function AboutPage() {
           <p className="hero-sub" style={{ maxWidth: "62ch" }}>
             Honest Offer is a locally owned real estate company that buys houses for cash across Kentucky. We&rsquo;ve been doing this for over seven years, and we&rsquo;ve bought more than 200 homes — mostly the ones that traditional buyers won&rsquo;t touch.
           </p>
+        </div>
+      </section>
+
+      {/* ── Team photo ── */}
+      <section style={{ paddingTop: 0 }}>
+        <div className="container-site">
+          <figure style={{ margin: "0 auto", maxWidth: 720 }}>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "16 / 10",
+                borderRadius: "var(--radius)",
+                overflow: "hidden",
+                border: "1px solid var(--line)",
+                background: "var(--paper)",
+              }}
+            >
+              <Image
+                src="/images/team-photo.png"
+                alt="The Honest Offer team outside the Honest Offer office"
+                fill
+                sizes="(max-width: 760px) 100vw, 720px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--muted)",
+                marginTop: "0.6rem",
+                textAlign: "center",
+              }}
+            >
+              The Honest Offer team — the same people you&rsquo;ll meet at
+              closing.
+            </figcaption>
+          </figure>
         </div>
       </section>
 

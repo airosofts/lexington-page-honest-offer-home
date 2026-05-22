@@ -538,6 +538,49 @@ export default function LexingtonPage() {
         </div>
       </section>
 
+      {/* ── Team & office ── */}
+      <section>
+        <div className="container-site">
+          <div className="section-head centered">
+            <div className="eyebrow" style={{ justifyContent: "center" }}>
+              The People Behind the Offer
+            </div>
+            <h2>A real, local Kentucky team — not a call center.</h2>
+          </div>
+          <figure style={{ margin: "0 auto", maxWidth: 640 }}>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "16 / 10",
+                borderRadius: "var(--radius)",
+                overflow: "hidden",
+                border: "1px solid var(--line)",
+                background: "var(--paper)",
+              }}
+            >
+              <Image
+                src="/images/team-photo.png"
+                alt="The Honest Offer team outside the Honest Offer office"
+                fill
+                sizes="(max-width: 700px) 100vw, 640px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--muted)",
+                marginTop: "0.6rem",
+                textAlign: "center",
+              }}
+            >
+              The Honest Offer team — the same people you&rsquo;ll meet at
+              closing.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* ── Service Area ── */}
       <section style={{ background: "var(--cream-deep)" }}>
         <div className="container-site">
