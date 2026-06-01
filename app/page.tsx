@@ -120,7 +120,7 @@ export default function LexingtonPage() {
             </div>
           </div>
 
-          <div>
+          <div className="hero-side">
             <LeadForm />
             <figure style={{ margin: "1.25rem 0 0" }}>
               <div
