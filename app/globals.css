@@ -310,6 +310,9 @@ h4 {
   .hero-grid {
     grid-template-columns: 1fr;
   }
+  /* Form-first on mobile: put the lead form above the hero copy. */
+  .hero-grid > .hero-copy { order: 2; }
+  .hero-grid > :not(.hero-copy) { order: 1; }
 }
 .hero-copy h1 {
   margin-top: 0.2em;
