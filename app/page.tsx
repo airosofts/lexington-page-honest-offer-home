@@ -50,8 +50,8 @@ export default function LexingtonPage() {
           </nav>
 
           <a
-            href={PHONE_TEL}
-            aria-label={`Call Honest Offer at ${PHONE_DISPLAY}`}
+            href="tel:+18592014950"
+            aria-label="Call Honest Offer at (859) 201-4950"
             className="topbar-phone"
           >
             <svg
@@ -67,7 +67,7 @@ export default function LexingtonPage() {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 5.91 5.91l1.51-1.51a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            {PHONE_DISPLAY}
+            (859) 201-4950
           </a>
         </div>
       </header>
@@ -83,6 +83,43 @@ export default function LexingtonPage() {
               Sell Your House Fast in <em>Lexington, KY</em> — Fair Cash Offer
               in 24 Hours
             </h1>
+            <a
+              href="tel:+18592014950"
+              aria-label="Call Honest Offer at (859) 201-4950"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                marginBottom: "1.25rem",
+                padding: "0.85rem 1.25rem",
+                background: "var(--barn)",
+                color: "var(--cream)",
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                fontSize: "clamp(1.15rem, 2.2vw, 1.4rem)",
+                letterSpacing: "-0.01em",
+                borderRadius: "var(--radius)",
+                textDecoration: "none",
+                boxShadow:
+                  "0 2px 0 var(--barn-deep), 0 6px 18px -4px rgba(180, 56, 31, 0.45)",
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 5.91 5.91l1.51-1.51a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              Call now: (859) 201-4950
+            </a>
+
             <p className="hero-sub">
               We buy houses across Lexington and Fayette County in any
               condition. Leaking roof, cluttered garage, outdated kitchen, stuff

@@ -135,8 +135,8 @@ export default function BowlingGreenPage() {
           </nav>
 
           <a
-            href={PHONE_TEL}
-            aria-label={`Call Honest Offer at ${PHONE_DISPLAY}`}
+            href="tel:+18592014950"
+            aria-label="Call Honest Offer at (859) 201-4950"
             className="topbar-phone"
           >
             <svg
@@ -152,7 +152,7 @@ export default function BowlingGreenPage() {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.4 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 5.91 5.91l1.51-1.51a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            {PHONE_DISPLAY}
+            (859) 201-4950
           </a>
         </div>
       </header>
