@@ -1,6 +1,20 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Figtree } from "next/font/google";
+import ClientErrorMonitor from "@/components/ClientErrorMonitor";
 import "./globals.css";
+
+// Self-host Figtree at build time. This removes the render-blocking
+// dependency on fonts.googleapis.com — when that domain is slow or
+// blocked, the previous <link> tag was stalling page render and
+// occasionally leaving the page styled by browser defaults.
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-figtree",
+  display: "swap",
+});
 
 // ─── Tracking IDs — set in .env.local, never hardcode here ───────────────────
 // GTM_ID           → NEXT_PUBLIC_GTM_ID                       (e.g. GTM-XXXXXXX)
@@ -162,18 +176,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={figtree.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400..900;1,400..900&display=swap"
-          rel="stylesheet"
-        />
 
         {/* Structured data */}
         <script
@@ -197,6 +201,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         )}
       </head>
       <body>
+        <ClientErrorMonitor />
+
         {/* Google Tag Manager <body> noscript fallback */}
         {GTM_ID && (
           <noscript>
