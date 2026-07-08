@@ -180,11 +180,20 @@ export default function LeadForm() {
     }
     setErrors({});
     setSubmitting(true);
-    await saveStep(3, {
+    const result = await saveStep(3, {
       name: values.name,
       email: values.email,
       propertyType: values.propertyType,
     });
+    // Only fire the GA event and navigate to the thank-you page (which
+    // fires the Google Ads / GA4 / Meta Lead conversions) if the save
+    // actually succeeded. Otherwise we would ghost-track conversions
+    // that never made it into the database.
+    if (!result.ok) {
+      setSubmitting(false);
+      setErrors({ name: "Something went wrong. Please try again." });
+      return;
+    }
     fireEvent("form_step_3_complete", { step: 3 });
     router.push("/offer-request-confirmed");
   }
