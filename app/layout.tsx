@@ -36,7 +36,7 @@ const localBusinessSchema = {
   "@type": "RealEstateAgent",
   name: "Honest Offer Inc.",
   url: "https://kentucky.honestofferhome.com",
-  telephone: "+18887808805",
+  telephone: "+18592014950",
   address: {
     "@type": "PostalAddress",
     streetAddress: "257 Elmwood Dr",

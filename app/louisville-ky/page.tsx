@@ -3,8 +3,8 @@ import VisitorTracker from "@/components/VisitorTracker";
 import CityFaq, { type FaqItem } from "@/components/CityFaq";
 import Link from "next/link";
 
-const PHONE_DISPLAY = "(888) 780-8805";
-const PHONE_TEL = "tel:+18887808805";
+const PHONE_DISPLAY = "(859) 201-4950";
+const PHONE_TEL = "tel:+18592014950";
 
 const FAQ_ITEMS: FaqItem[] = [
   {
@@ -38,7 +38,7 @@ const localBusinessSchema = {
   "@type": "RealEstateAgent",
   name: "Honest Offer Inc.",
   url: "https://kentucky.honestofferhome.com/louisville-ky",
-  telephone: "+18887808805",
+  telephone: "+18592014950",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Louisville",

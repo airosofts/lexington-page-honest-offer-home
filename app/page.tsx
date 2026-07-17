@@ -4,8 +4,8 @@ import FaqLexington from "@/components/FaqLexington";
 import Link from "next/link";
 import Image from "next/image";
 
-const PHONE_DISPLAY = "(888) 780-8805";
-const PHONE_TEL = "tel:+18887808805";
+const PHONE_DISPLAY = "(859) 201-4950";
+const PHONE_TEL = "tel:+18592014950";
 
 export default function LexingtonPage() {
   return (

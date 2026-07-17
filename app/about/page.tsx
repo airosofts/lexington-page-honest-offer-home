@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const PHONE_DISPLAY = "(888) 780-8805";
-const PHONE_TEL = "tel:+18887808805";
+const PHONE_DISPLAY = "(859) 201-4950";
+const PHONE_TEL = "tel:+18592014950";
 
 export default function AboutPage() {
   return (
