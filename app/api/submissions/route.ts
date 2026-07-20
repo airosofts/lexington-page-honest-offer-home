@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getClientIp } from "@/lib/getClientIp";
 import { lookupGeo } from "@/lib/getGeo";
 import { getSupabaseAdmin } from "@/lib/supabaseServer";
+import { sendWelcomeEmail } from "@/lib/welcomeEmail";
 
 export const runtime = "nodejs";
 
@@ -248,6 +249,21 @@ export async function POST(request: NextRequest) {
     }
   }
   // ──────────────────────────────────────────────────────────────────────────
+
+  // ── Welcome email — fires once on final submit if the lead gave an email.
+  // Best-effort: a failed send never fails the submission. Awaited (not
+  // fire-and-forget) because serverless can kill work after the response.
+  if (body.step === 3 && body.email?.trim()) {
+    const firstName = (body.name ?? "").trim().split(" ")[0] ?? "";
+    const address = body.address ?? existing?.address ?? "";
+    const result = await sendWelcomeEmail({
+      to: body.email.trim(),
+      firstName,
+      address,
+      sessionId: body.sessionId,
+    });
+    if (!result.sent) console.error("welcome email not sent:", result.error);
+  }
 
   const res = NextResponse.json({
     success: true,
