@@ -29,17 +29,18 @@ function esc(s: string): string {
 }
 
 export function buildWelcomeEmail(input: {
-  firstName: string;
+  firstName: string; // kept for API compatibility — no longer used in copy
   address: string;
   now?: Date;
 }): { subject: string; html: string } {
-  const firstName = esc(input.firstName.trim() || "there");
+  // Per Roland's review: no recipient name, no named sender — acquisitions
+  // people change often, so the email stays person-neutral.
   const address = esc(input.address.trim());
   const inHours = isWithinCallHours(input.now);
 
   const subject = inHours
-    ? `Got it, ${input.firstName.trim() || "friend"} — expect our call within the hour`
-    : `Got it, ${input.firstName.trim() || "friend"} — you're our first call tomorrow`;
+    ? `Got it — expect our call within the hour`
+    : `Got it — you're our first call tomorrow`;
 
   const callTiming = inHours
     ? `within the hour, you&rsquo;ll get a call from <strong style="color:#1F1A15;">(859)&nbsp;201-4950</strong>. That&rsquo;s us &mdash; save the number so you know it&rsquo;s not spam.`
@@ -95,7 +96,7 @@ export function buildWelcomeEmail(input: {
                 Request received
               </div>
               <h1 class="h1" style="margin:0 0 16px; font-size:28px; line-height:1.2; letter-spacing:-0.02em; font-weight:800; color:#1F1A15;">
-                Hi ${firstName} — <em style="font-style:italic; color:#8C2A14; font-weight:800;">you&rsquo;re all set.</em>
+                Hi! <em style="font-style:italic; color:#8C2A14; font-weight:800;">You&rsquo;re all set.</em>
               </h1>
               <p style="margin:0 0 14px; font-size:16px; line-height:1.6; color:#3E362D;">
                 Your request for <strong style="color:#1F1A15;">${address}</strong> just landed with our local Kentucky team — a real person, not an autoresponder.
@@ -110,18 +111,16 @@ export function buildWelcomeEmail(input: {
                 <tr>
                   <td align="center" style="background-color:#B4381F; border-radius:12px; box-shadow: 0 2px 0 #8C2A14;">
                     <a href="${CALL_URL}" style="display:inline-block; padding:15px 26px; font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight:700; font-size:16px; color:#FAF5EB; text-decoration:none; letter-spacing:-0.005em;">
-                      &#9742;&nbsp; Can&rsquo;t wait? Call ${PHONE_DISPLAY}
+                      &#9742;&nbsp; Can&rsquo;t wait, call now: ${PHONE_DISPLAY}
                     </a>
                   </td>
                 </tr>
               </table>
               <div style="font-size:14px; color:#3E362D; margin-bottom: 22px;">
-                Questions before we call? <strong style="color:#1F1A15;">Just hit reply</strong> — it comes straight to me.
+                Questions before we call? <strong style="color:#1F1A15;">Just hit reply</strong> — a real person reads it.
               </div>
               <div style="border-top:1px dashed #E5D9C2; padding-top:18px; margin-top: 4px;">
-                <div style="font-size:14px; color:#3E362D;">Talk soon,</div>
-                <div style="font-weight:600; font-size:15px; color:#1F1A15; margin-top:2px;">Jeff Anderson</div>
-                <div style="font-size:12px; color:#7A6F61; margin-top:2px;">Honest Offer &middot; Lexington, KY &middot; Licensed &amp; insured &middot; BBB A+</div>
+                <div style="font-weight:600; font-size:15px; color:#1F1A15;">Talk soon!</div>
               </div>
             </td>
           </tr>
